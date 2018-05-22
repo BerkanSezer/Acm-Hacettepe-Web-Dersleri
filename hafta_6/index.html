@@ -1,0 +1,111 @@
+<html>
+
+  <head>
+    <title>Acm Hacettepe JQ example</title>
+  </head>
+
+  <body>
+
+
+  </body>
+
+  <!--
+jQuery is a lightweight, "write less, do more", JavaScript library.
+HTML/DOM manipulation
+CSS manipulation
+
+HTML event methods
+Effects and animations
+AJAX
+Utilities
+
+Basic syntax is: $(selector).action()
+
+$(this).hide() - hides the current element.
+
+$("p").hide() - hides all <p> elements.
+
+$(".test").hide() - hides all elements with class="test".
+
+$("#test").hide() - hides the element with id="test".
+
+$(document).ready(function()
+
+$("#hide").click(function(){
+    $("p").hide();
+});
+$("#show").click(function(){
+    $("p").show();
+});
+
+$("button").click(function(){
+        $("p").toggle();
+    });
+fadeIn() method
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadein
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadetoggle
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadeto //
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_down
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_toggle
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation1_multicss
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation1_toggle
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_animation
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_stop_slide
+    //CALLBACK FUNCTION()
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide_no_callback
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_hide_callback
+
+
+$("#p1").mouseenter(function(){
+        alert("You entered p1!");
+    });
+
+$("input").focus(function(){
+        $(this).css("background-color", "#cccccc");
+    });
+    //Onm method kullanimi
+$("p").on({
+    mouseenter: function(){
+        $(this).css("background-color", "lightgray");
+    },
+    mouseleave: function(){
+        $(this).css("background-color", "lightblue");
+    },
+    click: function(){
+        $(this).css("background-color", "yellow");
+    }
+});
+
+Get Content - text(), html(), and val()
+Get Attributes - attr()
+https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_dom_html_set
+
+$("#w3s").attr({
+        "href" : "https://www.w3schools.com/jquery/",
+        "title" : "W3Schools jQuery Tutorial"
+    });
+append() and prepend()
+before() and after()    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_html_after
+remove();     https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_dom_remove
+$("p").remove(".test");
+empty();      https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_dom_empty
+
+    //CSS Manipulation
+addClass() - Adds one or more classes to the selected elements
+removeClass() - Removes one or more classes from the selected elements
+toggleClass() - Toggles between adding/removing classes from the selected elements
+css() - Sets or returns the style attribute
+  $("p").css("background-color", "yellow");
+$("span").parentsUntil("div").css({"color": "red", "border": "2px solid red"});
+
+first(), last(), eq(), filter() and not() Methods
+https://www.w3schools.com/jquery/jquery_traversing_filtering.asp
+
+    //AJAX
+    https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_ajax_load
+
+
+-->
+
+
+</html>

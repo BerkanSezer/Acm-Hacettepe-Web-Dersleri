@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      body {
+        font-family: 'Helvetica', 'Arial', sans-serif;
+      }
+
+      #list_section {
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0px auto;
+        padding: 20px;
+      }
+
+      ul {
+        padding: 0;
+      }
+
+      li {
+        background-color: #9cd2ff;
+        color: #ffffff;
+        font-size: 20px;
+        list-style-type: none;
+        width: 20%;
+        margin: 0px auto;
+        border-radius: 3px;
+        border: 1px solid #000;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+
+      p {
+        background-color: #fff;
+        color: #666;
+        padding: 10px;
+        display: inline-block;
+        margin: 20px auto 20px auto;
+        width: 80%;
+        border-radius: 5px;
+        text-align: center;
+      }
+
+      .item {
+        background-color: #fff;
+        color: #000;
+      }
+
+      input[type='text'] {
+        font-size: 12px;
+        padding: 6px;
+        border: 1px solid #000;
+        border-radius: 3px;
+      }
+
+      input[type='submit'] {
+        background-color: #fff;
+        color: #000;
+        border-radius: 8px;
+        border: none;
+        padding: 5px;
+      }
+
+      #newItemButton {
+        display: none;
+      }
+
+      #itemField {
+        margin-top: 60px;
+        width: 10%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="example1">
+      <div id="list_section">
+        <h1 id="header">ACM basic To-do list</h1>
+        <ul>
+          <li class="item">4 Bira Alinacak</li>
+        </ul>
+        <div id="newItemButton"><button href="#">new item</button></div>
+        <form id="newItemForm">
+          <input type="text" id="itemField" placeholder="Yapilacak Ekle" />
+          <input type="submit" id="add" value="Ekle" />
+        </form>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        function todoList() {
+          var $app1 = $(".example1");
+          if ($app1) {
+            var $list, $newItemForm;
+            $list = $('ul');
+            $newItemForm = $('#newItemForm');
+
+            $newItemForm.on('submit', function(e) {
+              e.preventDefault(); //varsayilan eventi kaldirir
+              var text = $('#itemField').val();
+              $list.append('<li>' + text + '</li>');
+              $('#itemField').val('');
+            });
+
+            $list.on('click', 'li', function() {
+              $(this).remove();
+            });
+          }
+        }
+        todoList();
+      });
+    </script>
+  </body>
+
+</html>

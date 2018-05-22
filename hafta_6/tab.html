@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      body {
+        margin-top: 50px;
+        font-family: monospace;
+      }
+
+      #container {
+        width: 600px;
+        margin: 0 auto;
+      }
+
+      .content {
+        display: none;
+        background-color: #96ddf7;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        padding: 20px;
+      }
+
+      #tabs {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+      }
+
+      #tabs>li {
+        display: inline-block;
+        padding: 10px;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .show {
+        display: block;
+      }
+
+      .active {
+        background-color: #96ddf7;
+      }
+
+      .inactive {
+        background-color: #eee;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container">
+
+      <ul id="tabs">
+        <li class="active" id="tab_1">Tab 1</li>
+        <li class="inactive" id="tab_2">Tab 2</li>
+        <li class="inactive" id="tab_3">Tab 3</li>
+        <li class="inactive" id="tab_4">Tab 4</li>
+      </ul>
+
+      <div class="content show" id="tab_1_content">
+        <p>Phasellus eleifend augue nec nisl consequat efficitur. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut fringilla malesuada
+          laoreet. Vivamus rhoncus tellus sed lacus aliquet, tincidunt hendrerit urna cursus. Quisque ex erat, sagittis a mollis sit amet, bibendum id arcu. Phasellus nulla ante, tristique in lobortis ut, fringilla id felis.</p>
+      </div>
+
+      <div class="content" id="tab_2_content">
+        <p>Quisque condimentum quam sit amet nibh euismod, sed varius tortor suscipit.</p>
+        <ul>
+          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+          <li>Vivamus sit amet diam sed quam gravida semper.</li>
+          <li>In et dui non magna auctor tempus.</li>
+          <li>Phasellus vel purus ut sem fringilla maximus.</li>
+        </ul>
+      </div>
+
+      <div class="content" id="tab_3_content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu dolor dolor. Mauris pulvinar eu massa vel fermentum. Nullam rhoncus sed sem a malesuada. Cras eu eros tellus. Suspendisse convallis lorem nunc, eu fringilla massa sagittis sed.
+          Quisque mollis et metus at ullamcorper. Praesent sed molestie tellus. Fusce gravida urna ac tortor convallis, sed pulvinar turpis porttitor. Vestibulum suscipit dapibus tortor in pulvinar. In tortor dui, cursus in porta vel, molestie in velit.
+          Etiam elementum, libero vitae dignissim fermentum, tortor lorem tristique tortor, ullamcorper porta enim lectus eget urna.</p>
+      </div>
+
+      <div class="content" id="tab_4_content">
+        <p>Curabitur sit amet ullamcorper eros. Ut vitae mi ac ligula finibus convallis. Sed mollis, lectus ac gravida ornare, eros ipsum ultrices nisi, in luctus nisl justo ac dolor.</p>
+        <p>Nulla eleifend facilisis massa, ac dapibus nisi ultricies at. Cras vehicula fermentum accumsan. Etiam tincidunt sit amet risus eget mattis. Sed varius, tortor at sagittis congue, justo lacus malesuada elit, non eleifend diam urna eget libero.
+          Suspendisse potenti. Quisque efficitur risus quis elit tempus pellentesque. Sed semper quam et nunc ultricies condimentum. Aliquam quis diam purus.</p>
+      </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.3.js" integrity="sha256-1XMpEtA4eKXNNpXcJ1pmMPs8JV+nwLdEqwiJeCQEkyc=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function() {
+        $("#tabs li").on("click", function() {
+          var tab = $(this).attr("id");
+
+          if ($(this).hasClass("inactive")) {
+
+            $(this).removeClass("inactive");
+            $(this).addClass("active");
+            $(this).siblings().removeClass("active").addClass("inactive");
+
+            $("#" + tab + "_content").addClass("show");
+            $("#" + tab + "_content").siblings("div").removeClass("show");
+          }
+        });
+      });
+    </script>
+  </body>
+
+</html>
